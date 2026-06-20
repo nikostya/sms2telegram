@@ -1,4 +1,4 @@
-0. Inatall and configure gammu service [gammu installation](/gammu_installation.md)
+0. Inatall and configure gammu service [gammu installation](/docs/gammu_installation.md)
 
 # sms2telegram
 SMS 2 Telegram bot
