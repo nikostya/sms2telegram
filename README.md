@@ -23,8 +23,8 @@ Environment="PATH=/home/nikostya/smstgbot/venv/bin:/usr/bin:/bin:/usr/local/bin"
 ExecStartPre=/bin/sleep 3
 
 ExecStart=/home/nikostya/smstgbot/venv/bin/python3 /home/nikostya/smstgbot/smstgbot.py --start
-ExecStop=/home/nikostya/smstgbot/venv/bin/python3 /home/nikostya/smstgbot.py --stop
-ExecReload=/home/nikostya/smstgbot/venv/bin/python3 /home/nikostya/smstgbot.py --restart
+ExecStop=/home/nikostya/smstgbot/venv/bin/python3 /home/nikostya/smstgbot/smstgbot.py --stop
+ExecReload=/home/nikostya/smstgbot/venv/bin/python3 /home/nikostya/smstgbot/smstgbot.py --restart
 
 Restart=always
 RestartSec=5
