@@ -274,8 +274,6 @@ WantedBy=multi-user.target
 
 The application reads its configuration from `.env` in the project directory. This works because `WorkingDirectory` points to the project directory.
 
-The service does not need `ExecStop` or `ExecReload`. Process start, stop, and restart are handled by systemd.
-
 ## 10. Enable and start the service
 
 Reload systemd configuration:
@@ -310,13 +308,13 @@ Follow the service log:
 sudo journalctl -u smstgbot.service -f
 ```
 
-Show recent log entries:
+Check recent log entries:
 
 ```bash
 sudo journalctl -u smstgbot.service -n 100 --no-pager
 ```
 
-Show logs since the last system boot:
+Check logs since the last system boot:
 
 ```bash
 sudo journalctl -u smstgbot.service -b --no-pager
@@ -340,20 +338,6 @@ Start it again:
 
 ```bash
 sudo systemctl start smstgbot.service
-```
-
-A normal restart should not produce messages such as:
-
-```text
-Stopping timed out
-Failed with result 'timeout'
-```
-
-If such messages appear, check that the unit file does not contain obsolete commands such as:
-
-```ini
-ExecStop=...
-ExecReload=...
 ```
 
 ## 13. Update the application
@@ -533,28 +517,6 @@ A `.sent` suffix means that the file was processed by the application.
 
 It does not necessarily guarantee successful delivery to Nextcloud Talk. Check the service logs to confirm that the HTTP request to Nextcloud Talk was successful.
 
-### The service restart takes about 30 seconds
-
-Check the unit file:
-
-```bash
-sudo systemctl cat smstgbot.service
-```
-
-The service should not contain commands such as:
-
-```ini
-ExecStop=...
-ExecReload=...
-```
-
-For this application, systemd should stop and restart the main process directly.
-
-After changing the unit file, reload systemd:
-
-```bash
-sudo systemctl daemon-reload
-```
 
 Then restart the service:
 
