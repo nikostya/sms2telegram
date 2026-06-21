@@ -84,6 +84,24 @@ View the service log:
 ```bash
 sudo journalctl -u smstgbot.service -f
 ```
+### Gammu SMSD
+
+After disconnecting and reconnecting the USB modem, restart Gammu SMSD:
+
+```bash
+sudo systemctl restart gammu-smsd.service
+```
+
+A restart may also help if Gammu SMSD is running but no longer receives SMS messages.
+
+Check its status:
+```bash
+sudo systemctl status gammu-smsd.service
+```
+View recent logs:
+```bash
+sudo journalctl -u gammu-smsd.service -n 100 --no-pager
+```
 
 ## Repository structure
 
