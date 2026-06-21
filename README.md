@@ -2,7 +2,7 @@
 
 A Python service that receives SMS messages through a GSM modem and forwards them to Nextcloud Talk.
 
-The project was originally created for forwarding SMS messages to Telegram. The current version uses Nextcloud Talk, while Telegram integration is temporarily disabled.
+The project was originally created for forwarding SMS messages to Telegram. The current version uses Nextcloud Talk, while Telegram integration is temporarily disabled. See the [Nextcloud Server installation documentation](https://docs.nextcloud.com/server/stable/admin_manual/installation/index.html) and the [Nextcloud Talk documentation](https://nextcloud-talk.readthedocs.io/).
 
 ## How it works
 
@@ -26,11 +26,11 @@ The project was originally created for forwarding SMS messages to Telegram. The 
 ## Requirements
 
 - Linux server with systemd
-- GSM modem supported by Gammu
+- USB GSM modem with an AT-compatible serial interface. This project tested on Huawei E1550 modem
 - SIM card capable of receiving SMS messages
 - Gammu and Gammu SMSD
 - Python 3
-- Nextcloud server with the Talk application
+- Nextcloud server with the Talk application. See the [Nextcloud Server installation documentation](https://docs.nextcloud.com/server/stable/admin_manual/installation/index.html) and the [Nextcloud Talk documentation](https://nextcloud-talk.readthedocs.io/).
 - Nextcloud account and application password
 - Nextcloud Talk conversation token
 
